@@ -1,0 +1,33 @@
+.wrapperInicio{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typingDemo{
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+}
+.form{
+    background-color: beige;
+}
+.inputName{
+background-color: aqua;
+}         
+
+.inputSurname{
+background-color: blue;
+}
+
+.buttonBegin{
+background-color: #1197cc;
+box-shadow: #094c66 4px 4px 0px;
+border-radius: 8px;
+transition: transform 200ms, box-shadow 200ms;
+}
