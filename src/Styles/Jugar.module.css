@@ -1,12 +1,130 @@
-.TiempoRestante{
-    background-color: aqua;
-}
-.LadoIzquierdo{
-    background-color: brown;
-}
-.LadoDerecho{
-    background-color: blueviolet;
-}
-.TituloPregunta{
-    background-color: red;
-}
+/* PREGUNTAS */
+.JuegoContenedor {
+    background-color: #252d4a;
+    max-width: 650px;
+    min-width: 450px;
+    height: min-content;
+    min-height: 200px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+.LadoIzquierdo {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .NumeroPregunta {
+    margin-bottom: 20px;
+  }
+  
+  .NumeroPregunta span {
+    font-size: 26px;
+  }
+  
+  .TituloPregunta {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .LadoDerecho {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .ButtonTrue{
+    background-color: #fcfcfc;
+    box-shadow: #485eb1 4px 4px 0px;
+    border-radius: 10px;
+    transition: transform 200ms, box-shadow 200ms;
+    padding: 6px;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-top: 6vh;
+    font-size: 18px;
+  }
+
+  .ButtonFalse{
+    background-color: #fcfcfc;
+    box-shadow: #485eb1 4px 4px 0px;
+    border-radius: 8px;
+    transition: transform 200ms, box-shadow 200ms;
+    padding: 6px;
+    border: 2px solid black;
+    cursor: pointer;
+    font-size: 18px;
+  }
+/*   
+  /* FINALIZADO */
+  /*.juego-terminado {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 24px;
+    align-items: center;
+  }*/
+  
+  /* GRAL */
+  /*.Button {
+    width: 100%;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #252d4a;
+    border-radius: 15px;
+    display: flex;
+    padding: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 5px solid #234668;
+    cursor: pointer;
+  }
+*/
+
+  /*
+  .tiempo-restante {
+    font-size: 14px;
+    color: #fcbf3d;
+    margin-bottom: 20px;
+  }
+  
+  .correct,
+  .correct:hover {
+    background-color: #2f922f;
+  }
+  
+  .incorrect,
+  .incorrect:hover {
+    background-color: #ff3333;
+  }
+  
+  .btns-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  */
+  
+  button:hover {
+    background-color: #a0bada8a;
+  }
+/*   
+  button[disabled] {
+    background-color: #555e7d;
+    color: #ffffff;
+    cursor: not-allowed;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button svg {
+    margin-right: 5px;
+  }  */

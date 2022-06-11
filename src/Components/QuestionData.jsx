@@ -1,48 +1,33 @@
-import React, { useState, useEffect } from "react";
-import {PlaySection} from "./Jugar"
+import React from "react";
+import { useState } from "react";
+//import { useState,useEffect } from "react";
+import Jugar from "../Styles/Jugar.module.css";
 
-export function QuestionData() {
-  const obtenerDatos =
-    "https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean";
-  const [datos, setDatos] = useState();
-  const data = async () => {
-    const dataInfo = await fetch(obtenerDatos);
-    console.log(dataInfo);
-    const rJson = await dataInfo.json();
-    setDatos(rJson.results);
-    console.log(rJson);
-    console.log(datos)
-    console.log(data)
-  };
+export function QuestionData({ datos }) {
+  console.log(datos);
 
-  useEffect(() => {
-    data();
-  }, []);
+  const [CurrentQuestion, setCurrentQuestion] = useState([0]);
+  // const [score, setscore] = useState(0);
+  // const [isFinalized, setFinalized] = useState (false);
+  console.log (CurrentQuestion)
 
   return (
     <>
-      {/* <div>
-        <ul>
-          {!datos
-            ? "Cargando..."
-            : datos.results?.map((item, i) => (
-                <li key={i}>{item.category} </li>
-              ))}
-          {!datos
-            ? "Cargando..."
-            : datos.results?.map((item, i) => (
-                <li key={i}>{item.question.replace("&#039;", "'")}</li>
-              ))}
-          {!datos
-            ? "Cargando..."
-            : datos.results?.map((item, i) => (
-                <li key={i}>{item.correct_answer}</li>
-              ))}
-        </ul>
-      </div> */}
-      {/* <PlaySection {...datos.results}></PlaySection> */}
-      <PlaySection {...datos}/>
-
+    <div className={Jugar.JuegoContenedor}>
+      <div className={Jugar.LadoIzquierdo}>
+        <div className={Jugar.NumeroPregunta}>
+          <span>{CurrentQuestion + 1} de </span>{datos?.length}
+        </div>
+        <div className={Jugar.TituloPregunta}>{datos[CurrentQuestion].question}</div>
+      </div>
+      <div className={Jugar.LadoDerecho}>
+        {datos[CurrentQuestion].map((correct_answer) =>(
+          <button className={Jugar.ButtonTrue}>{correct_answer}</button>
+        ))}
+        
+        <button className={Jugar.ButtonFalse}>False</button>
+      </div>
+      </div>
     </>
   );
 }
