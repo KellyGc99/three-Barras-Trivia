@@ -6,4 +6,4 @@ Creación de un cuestionario de 10 preguntas, con respuestas verdaderas o falsas
 
 Para almacenar el nombre se usa LocalStorage y para la ejecución de la trivia se usan Hooks de estados y renderización de componentes. 
 
-Puede desplegarce en el siguiente link Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Puede desplegarce en el siguiente link Open [https://kellyg-triviachallenge.netlify.app/Inicio](https://kellyg-triviachallenge.netlify.app/Inicio).
