@@ -31,3 +31,10 @@ box-shadow: #485eb1 4px 4px 0px;
 border-radius: 8px;
 transition: transform 200ms, box-shadow 200ms;
 }
+
+.IniciarJuego{
+background-color: #fcfcfc;
+box-shadow: #485eb1 4px 4px 0px;
+border-radius: 8px;
+transition: transform 200ms, box-shadow 200ms;
+}

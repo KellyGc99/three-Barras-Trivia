@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import {Link} from "react-router-dom"
 import Inicio from "../Styles/Inicio.module.css";
 
 export function StartGame() {
@@ -9,6 +10,7 @@ export function StartGame() {
   });
 
   const handleInputChange = (e) => {
+
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value,
@@ -44,8 +46,14 @@ export function StartGame() {
           name="apellido"
           onChange={handleInputChange}
         ></input>
-        <button className={Inicio.buttonBegin} type="submit">Beggin</button>
+        <button className={Inicio.buttonBegin} type="submit" >Registes</button>
       </form>
+      <button className={Inicio.IniciarJuego}>
+          <Link to="/Jugar"
+          style={{ textDecoration: "none"}}>
+            Start
+          </Link>
+        </button>
     </>
   );
 }

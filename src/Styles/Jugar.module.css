@@ -62,69 +62,24 @@
     cursor: pointer;
     font-size: 18px;
   }
-/*   
-  /* FINALIZADO */
-  /*.juego-terminado {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    font-size: 24px;
-    align-items: center;
-  }*/
-  
-  /* GRAL */
-  /*.Button {
-    width: 100%;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #252d4a;
-    border-radius: 15px;
-    display: flex;
-    padding: 5px;
-    justify-content: flex-start;
-    align-items: center;
-    border: 5px solid #234668;
-    cursor: pointer;
-  }
-*/
-
-  /*
-  .tiempo-restante {
-    font-size: 14px;
-    color: #fcbf3d;
-    margin-bottom: 20px;
-  }
-  
-  .correct,
-  .correct:hover {
-    background-color: #2f922f;
-  }
-  
-  .incorrect,
-  .incorrect:hover {
-    background-color: #ff3333;
-  }
-  
-  .btns-container {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  */
   
   button:hover {
     background-color: #a0bada8a;
   }
-/*   
-  button[disabled] {
-    background-color: #555e7d;
-    color: #ffffff;
-    cursor: not-allowed;
-  }
-  
-  button:focus {
-    outline: none;
-  }
-  
-  button svg {
-    margin-right: 5px;
-  }  */
+
+.Progress{
+  position: relative;
+  height: 10px;
+  width: 1110%;
+  border: 10px solid #f4a261;
+  border-radius: 15px;
+}
+
+.Progress .Color{
+  position: absolute;
+  background-color: #ffffff;
+  width: 0px;
+  height: 10px;
+  border-radius: 15px;
+  animation: progres 4s infinite linear;
+}
