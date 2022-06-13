@@ -1,40 +1,76 @@
 .wrapperInicio{
     height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(/src/Assets/trivia-background.jpg);
+    background-size: 100% 100%;
+    background-position: center;
 }
 
 .typingDemo{
-    width: 22ch;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20vh;
+    animation: typing 7s infinite ;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
-    font-size: 2em;
+    font-size: 1.3em;
+    /* background-color: red; */
+    position: absolute;
+    top: 15vh;
+    text-align: center;
+    padding-left: 65vw;
 }
+
+@keyframes typing{
+    0%{
+        padding-left: 65vw;
+    }
+    100%{
+        padding-left: 0vw;
+    }
+}
+
 .form{
-    background-color: beige;
+    backdrop-filter: blur(5px);
+    background-color: rgba(249, 244, 194, 0.411);
+    display: flex;
+    width: 35vw;
+    height:30vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 18vh;
+    border-radius: 15px;
+    padding: 4vh 0;
+}
+.formData{
+    display: flex;
+    width: 30vw;
+    justify-content: space-around;
 }
 .inputName{
-background-color: aqua;
+    background-color: rgb(255, 255, 255);
+    height: 5vh;
+    border-radius: 5px;
+    padding-left:0.6vw;
 }         
 
-.inputSurname{
-background-color: blue;
-}
-
-.buttonBegin{
-background-color: #fcfcfc;
-box-shadow: #485eb1 4px 4px 0px;
-border-radius: 8px;
-transition: transform 200ms, box-shadow 200ms;
-}
-
 .IniciarJuego{
-background-color: #fcfcfc;
-box-shadow: #485eb1 4px 4px 0px;
-border-radius: 8px;
-transition: transform 200ms, box-shadow 200ms;
+    width: 12vw;
+    height: 7vh;
+    background-color: #DC5C1F;
+    color: white;
+    box-shadow: #485eb1 4px 4px 0px;
+    border-radius: 15px;
+    transition: transform 200ms, box-shadow 200ms;
+}
+.IniciarJuego:hover{
+    cursor: pointer;
 }

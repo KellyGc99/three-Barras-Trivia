@@ -7,7 +7,6 @@ export function QuestionData(datos) {
   console.log(datos);
   const result = datos?.datos;
   console.log(result);
-
   const [CurrentQuestion, setCurrentQuestion] = useState(0);
   const [score, setscore] = useState(-1);
   const [isFinalized, setFinalized] = useState(false);
@@ -43,84 +42,96 @@ export function QuestionData(datos) {
       } else {
         setCurrentQuestion(CurrentQuestion + 1);
       }
-    }, 1000);
+    }, 500);
   }
 
   if (isFinalized) {
     console.log(respuestas);
     return (
       <>
-        <div className={Jugar.JuegoContenedor}>
-          {respuestas.map((dato, index) => (
-            <div key={index}>
-              {dato?.respuesta}
-              {dato?.pregunta[index]}
-              {dato?.resultados[index]}
-            </div>
-          ))}
-          <div className={Jugar.Puntaje}>{<div>{score}</div>}</div>
-          <button
-            onClick={() => {
-              if (CurrentQuestion === datos?.datos?.length - 1) {
-                window.location.href = "/Inicio";
-              } else {
-                setCurrentQuestion(CurrentQuestion + 1);
-              }
-            }}
-          >
-            {CurrentQuestion === datos?.datos?.length - 1
-              ? "Volver a jugar"
-              : "Siguiente"}
-          </button>
-          <div className={Jugar.Progress}>
-            <div className={Jugar.Color}></div>
+      <section className={Jugar.GameContenedor}>
+          <div className={Jugar.JuegoContenedorFinal}>
+            <h2 className={Jugar.TitleFinal}>Your results</h2>
+            {respuestas.map((dato, index) => (
+              <div key={index}>
+                  <div className={Jugar.Question}>
+                  <div>
+                  <b>Question {CurrentQuestion === datos?.datos?.length +1}
+                     </b>
+                  <br></br>
+                    {dato?.pregunta[index]}
+                    </div>
+                  <div className={Jugar.Res}>
+                    <span>Correct answer </span>
+                    {dato?.respuesta}
+                    </div>
+                  <div>
+                    <span>Your answer </span>
+                      {dato?.resultados[index]}
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className={Jugar.Puntaje}>{<div><b>Score:</b> {score}</div>}</div>
+            <button className={Jugar.ReloadJuego}
+              onClick={() => {
+                if (CurrentQuestion === datos?.datos?.length - 1) {
+                  window.location.href = "/Inicio";
+                } else {
+                  setCurrentQuestion(CurrentQuestion + 1);
+                }
+              }}
+            > play again
+            </button>
           </div>
-        </div>
+        </section>
       </>
     );
   } else {
     return (
       <>
-        <div className={Jugar.JuegoContenedor}>
-          <div className={Jugar.LadoIzquierdo}>
-            <div className={Jugar.NumeroPregunta}>
-              <span>
-                {" "}
-                pregunta {CurrentQuestion + 1} de {datos?.datos?.length}{" "}
-              </span>
+      <section className={Jugar.GameContenedor}>
+          <div className={Jugar.JuegoContenedor}>
+            <div className={Jugar.LadoIzquierdo}>
+              <div className={Jugar.NumeroPregunta}>
+                <span>
+                  {" "}
+                  pregunta {CurrentQuestion + 1} de {datos?.datos?.length}{" "}
+                </span>
+              </div>
+              <div className={Jugar.TituloCategoria}>
+                {datos?.datos?.map(
+                  (category, index) =>
+                    index === CurrentQuestion && (
+                      <div key={index}><b>Category:</b> {category.category}</div>
+                    )
+                )}
+              </div>
+              <div className={Jugar.TituloPregunta}>
+                {datos?.datos?.map(
+                  (question, index) =>
+                    index === CurrentQuestion && (
+                      <div key={index}>{question.question}</div>
+                    )
+                )}
+              </div>
             </div>
-            <div className={Jugar.TituloCategoria}>
-              {datos?.datos?.map(
-                (category, index) =>
-                  index === CurrentQuestion && (
-                    <div key={index}>{category.category}</div>
-                  )
-              )}
-            </div>
-            <div className={Jugar.TituloPregunta}>
-              {datos?.datos?.map(
-                (question, index) =>
-                  index === CurrentQuestion && (
-                    <div key={index}>{question.question}</div>
-                  )
-              )}
+            <div className={Jugar.LadoDerecho}>
+              <button
+                className={Jugar.ButtonTrue}
+                onClick={(e) => handleAnswerSubmit("True", e)}
+              >
+                True
+              </button>
+              <button
+                className={Jugar.ButtonFalse}
+                onClick={(e) => handleAnswerSubmit("False", e)}
+              >
+                False
+              </button>
             </div>
           </div>
-          <div className={Jugar.LadoDerecho}>
-            <button
-              className={Jugar.ButtonTrue}
-              onClick={(e) => handleAnswerSubmit("True", e)}
-            >
-              True
-            </button>
-            <button
-              className={Jugar.ButtonFalse}
-              onClick={(e) => handleAnswerSubmit("False", e)}
-            >
-              False
-            </button>
-          </div>
-        </div>
+        </section>
       </>
     );
   }

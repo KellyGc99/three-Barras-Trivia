@@ -1,27 +1,45 @@
 /* PREGUNTAS */
+.GameContenedor{
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/src/Assets/trivia-background.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    padding-top: 20vh;
+    overflow-x: hidden;
+}
 .JuegoContenedor {
     background-color: #252d4a;
-    max-width: 650px;
+    width: 650px;
     min-width: 450px;
-    height: min-content;
-    min-height: 200px;
+    height: auto;
+    min-height: 250px;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
     display: flex;
     justify-content: space-evenly;
+    color: white;
   }
 
 .LadoIzquierdo {
-    width: 100%;
+    width: 600px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-right: 20px;
+    padding: 0.5em;
   }
   
   .NumeroPregunta {
     margin-bottom: 20px;
+    font-weight:700;
+    text-transform: capitalize;
   }
   
   .NumeroPregunta span {
@@ -30,14 +48,16 @@
   
   .TituloPregunta {
     margin-bottom: 10px;
-    text-align: center;
+    text-align: justify;
+    margin-top:2vh;
+
   }
   
   .LadoDerecho {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .ButtonTrue{
@@ -65,6 +85,7 @@
   
   button:hover {
     background-color: #a0bada8a;
+    cursor: pointer;
   }
 
 .Progress{
@@ -82,4 +103,56 @@
   height: 10px;
   border-radius: 15px;
   animation: progres 4s infinite linear;
+}
+.JuegoContenedorFinal {
+  background-color: #252d4a;
+  width: 650px;
+  color: white;
+  display:flex;
+  flex-direction: column;
+  padding: 1em;
+  align-items: flex-start;
+}
+.ReloadJuego{
+  width: 12vw;
+  height: 7vh;
+  background-color: #DC5C1F;
+  color: white;
+  box-shadow: #485eb1 4px 4px 0px;
+  border-radius: 15px;
+  transition: transform 200ms, box-shadow 200ms;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  margin-left: 40%;
+}
+.TitleFinal{
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  width: 100%;
+}
+.Puntaje{
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  background-color: #485eb1;
+  width: 100%;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1.5em;
+}
+.Res{
+  color:#DC5C1F;
+}
+.Question{
+  margin-bottom: 2vh;
+}
+.UserName{
+  position: absolute;
+  top:13vh;
+  font-size: 1.3em;
+  text-transform: capitalize;
+  font-weight: 600;
+  width: 100vw;
+  text-align: center;
 }
