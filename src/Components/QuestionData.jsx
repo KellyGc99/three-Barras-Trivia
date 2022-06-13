@@ -56,7 +56,7 @@ export function QuestionData(datos) {
               <div key={index}>
                   <div className={Jugar.Question}>
                   <div>
-                  <b>Question {CurrentQuestion === datos?.datos?.length +1}
+                  <b>Question {index+1}
                      </b>
                   <br></br>
                     {dato?.pregunta[index]}
