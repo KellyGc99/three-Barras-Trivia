@@ -4,19 +4,31 @@ import { useState } from "react";
 import Jugar from "../Styles/Jugar.module.css";
 
 export function QuestionData(datos) {
-  console.log(datos);
-  const result = datos?.datos;
-  console.log(result);
+
   const [CurrentQuestion, setCurrentQuestion] = useState(0);
   const [score, setscore] = useState(-1);
   const [isFinalized, setFinalized] = useState(false);
   const [respuestas, setRespuestas] = useState([]);
 
+  function decode(str)
+{
+    let map =
+    {
+        '&amp;': '&',
+        '&aring;': 'Å',
+        '&ldquo;': '""',
+        '&lt;': '<',
+        '&gt;': '>',
+        '&quot;': '"',
+        '&#039;': "'"
+    };
+    return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;|&aring;|&ldquo;/g, function(m) {return map[m];});
+}
+
   function handleAnswerSubmit(isCorrect, e) {
-    console.log(isCorrect);
 
     const pregunta = datos?.datos?.map(
-      (question, index) => index === CurrentQuestion && question.question
+      (question, index) => index === CurrentQuestion && decode(question.question)
     );
 
     const results = datos?.datos?.map(
@@ -30,7 +42,6 @@ export function QuestionData(datos) {
       resultados: results,
       puntaje: score,
     };
-    console.log(score);
 
     setRespuestas([...respuestas, guardar]);
 
@@ -46,7 +57,6 @@ export function QuestionData(datos) {
   }
 
   if (isFinalized) {
-    console.log(respuestas);
     return (
       <>
       <section className={Jugar.GameContenedor}>
@@ -111,7 +121,7 @@ export function QuestionData(datos) {
                 {datos?.datos?.map(
                   (question, index) =>
                     index === CurrentQuestion && (
-                      <div key={index}>{question.question}</div>
+                      <div key={index}>{decode(question.question)}</div>
                     )
                 )}
               </div>

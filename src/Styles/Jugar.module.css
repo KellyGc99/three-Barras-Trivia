@@ -86,24 +86,8 @@
   button:hover {
     background-color: #a0bada8a;
     cursor: pointer;
-  }
-
-.Progress{
-  position: relative;
-  height: 10px;
-  width: 1110%;
-  border: 10px solid #f4a261;
-  border-radius: 15px;
 }
 
-.Progress .Color{
-  position: absolute;
-  background-color: #ffffff;
-  width: 0px;
-  height: 10px;
-  border-radius: 15px;
-  animation: progres 4s infinite linear;
-}
 .JuegoContenedorFinal {
   background-color: #252d4a;
   width: 650px;

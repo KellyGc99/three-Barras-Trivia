@@ -32,7 +32,7 @@ console.log(datos)
 
 return (
   <>
-  <p className={Jugar.UserName}>Hello {nombre} !!!</p>
+  <p className={Jugar.UserName}> Hello {nombre} !!!</p>
   <QuestionData datos={datos}/>
   </>
  
