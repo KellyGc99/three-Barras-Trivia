@@ -2,6 +2,7 @@ import React from "react";
 //import { useEffect } from "react";
 import { useState } from "react";
 import Jugar from "../Styles/Jugar.module.css";
+import Grafica from "./grafica";
 
 export function QuestionData(datos) {
 
@@ -9,6 +10,7 @@ export function QuestionData(datos) {
   const [score, setscore] = useState(-1);
   const [isFinalized, setFinalized] = useState(false);
   const [respuestas, setRespuestas] = useState([]);
+  const [userRta, setUserRta] = useState([]);
 
   function decode(str)
 {
@@ -44,7 +46,7 @@ export function QuestionData(datos) {
     };
 
     setRespuestas([...respuestas, guardar]);
-
+    setUserRta([...userRta,isCorrect])
     if (isCorrect === results[CurrentQuestion]) setscore(score + 1);
 
     setTimeout(() => {
@@ -62,7 +64,7 @@ export function QuestionData(datos) {
       <section className={Jugar.GameContenedor}>
           <div className={Jugar.JuegoContenedorFinal}>
             <h2 className={Jugar.TitleFinal}>Your results</h2>
-            {respuestas.map((dato, index) => (
+            {/* {respuestas.map((dato, index) => (
               <div key={index}>
                   <div className={Jugar.Question}>
                   <div>
@@ -81,7 +83,8 @@ export function QuestionData(datos) {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
+            <Grafica {...userRta}/>
             <div className={Jugar.Puntaje}>{<div><b>Score:</b> {score}</div>}</div>
             <button className={Jugar.ReloadJuego}
               onClick={() => {
