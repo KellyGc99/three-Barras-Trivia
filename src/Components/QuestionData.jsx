@@ -2,7 +2,7 @@ import React from "react";
 //import { useEffect } from "react";
 import { useState } from "react";
 import Jugar from "../Styles/Jugar.module.css";
-import Grafica from "./grafica";
+// import Grafica from "./grafica";
 
 export function QuestionData(datos) {
 
@@ -64,7 +64,7 @@ export function QuestionData(datos) {
       <section className={Jugar.GameContenedor}>
           <div className={Jugar.JuegoContenedorFinal}>
             <h2 className={Jugar.TitleFinal}>Your results</h2>
-            {/* {respuestas.map((dato, index) => (
+            {respuestas.map((dato, index) => (
               <div key={index}>
                   <div className={Jugar.Question}>
                   <div>
@@ -83,8 +83,8 @@ export function QuestionData(datos) {
                   </div>
                 </div>
               </div>
-            ))} */}
-            <Grafica {...userRta}/>
+            ))}
+            {/* <Grafica {...userRta}/> */}
             <div className={Jugar.Puntaje}>{<div><b>Score:</b> {score}</div>}</div>
             <button className={Jugar.ReloadJuego}
               onClick={() => {
